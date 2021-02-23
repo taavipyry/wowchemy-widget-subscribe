@@ -1,9 +1,9 @@
-{{ $page := .root }}
+{{ $ := .root }}
+{{ $page := .page }}
 {{ $section := .page }}
 {{ $data := site.Params }}
 {{ $st := .page }}
 {{ $autolink := default true $st.Params.content.autolink }}
-{{ $data := site.Params }}
 <div class="mb-3">
   <form name="subscribe" method="POST" data-netlify="true">
     <div class="form-group form-inline">
