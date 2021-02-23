@@ -4,11 +4,9 @@
 {{ $data := site.Params }}
 {{ $st := .page }}
 {{ $autolink := default true $st.Params.content.autolink }}
-
-<div class="section-heading col-12 mb-3 text-center">
+<div class="section-heading col-12 text-center">
   {{ with $st.Title }}<h1 class="mb-0">{{ . | markdownify | emojify }}</h1>{{ end }}
 </div>
-
 <div class="mb-3">
   {{ with $page.Title }}
   <form name="subscribe" method="POST" data-netlify="true">
