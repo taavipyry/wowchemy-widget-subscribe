@@ -1,6 +1,17 @@
 {{ $page := .root }}
 {{ $section := .page }}
-
-<h2>{{$section.Title}}</h2>
-
-<p>{{$section.Content}}</p>
+{{ $data := site.Params }}
+{{ $st := .page }}
+{{ $autolink := default true $st.Params.content.autolink }}
+{{ $data := site.Params }}
+<div class="mb-3">
+  <form name="subscribe" method="POST" data-netlify="true">
+    <div class="form-group form-inline">
+      <label class="sr-only" for="inputEmail">{{ i18n "contact_email" }}</label>
+      <input type="email" name="email" class="form-control w-100" id="inputEmail" placeholder="{{ i18n "contact_email" | default "Email" }}" required>
+    </div>
+    <button type="submit" class="btn btn-outline-primary px-3 py-2">Subscribe to newsletter</button>
+    </p>
+  </form>
+</div>
+{{end}}
